@@ -1,19 +1,26 @@
 import { useState } from "react";
 // import { format } from "date-fns";
+import { DateTime } from "luxon";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
 import CustomCaption from "./components/CustomCaption";
-import DateTime from "./components/DateTime";
+import CustomDateTime from "./components/CustomDateTime";
 import CustomTableHeadRow from "./components/CustomTableHeadRow";
 
 export default function App() {
   const [selected, setSelected] = useState<Date>();
 
-  // let footer = <p>Please pick a day.</p>;
-  // if (selected) {
-  //   footer = <p>You picked {format(selected, "PP")}.</p>;
-  // }
+  let footer = <p>Please pick a day.</p>;
+  if (selected) {
+    // footer = <p>You picked {format(selected, "PP")}.</p>;
+    footer = (
+      <p>
+        You picked{" "}
+        {DateTime.fromISO(selected.toISOString()).toFormat("MMM dd, yyyy")}.
+      </p>
+    );
+  }
 
   return (
     <div>
@@ -22,11 +29,11 @@ export default function App() {
         mode="single"
         selected={selected}
         onSelect={setSelected}
-        // footer={footer}
+        footer={footer}
         showOutsideDays
         components={{
           Caption: CustomCaption,
-          DayContent: DateTime,
+          DayContent: CustomDateTime,
           HeadRow: CustomTableHeadRow,
         }}
       />
