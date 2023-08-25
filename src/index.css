@@ -48,11 +48,33 @@ body {
   font-weight: 400;
   line-height: 18px; /* 150% */
 }
-.day {
+.rdp-head_cell {
+  vertical-align: middle;
+  height: 100%;
+  padding: 8px;
+  text-transform: none;
+  color: #464355;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+.rdp-button_reset,
+.rdp-button,
+.rdp-day,
+.rdp-day_selected {
   color: #464355;
   text-align: center;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
+}
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  color: white;
+  opacity: 1;
+  background-color: #46a583;
 }
