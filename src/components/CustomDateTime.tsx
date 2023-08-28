@@ -1,12 +1,12 @@
-// import { format } from "date-fns";
-import { DateTime } from "luxon";
+import { format } from "date-fns";
+// import { DateTime } from "luxon";
 import { DayContent, DayContentProps } from "react-day-picker";
 
 export default function CustomDateTime(props: DayContentProps) {
-  // const dateTime = format(props.date, "yyyy-MM-dd");
+  const dateTime = format(props.date, "yyyy-MM-dd");
 
-  const dt = DateTime.fromISO(props.date.toISOString());
-  const dateTime = dt.toFormat("yyyy-MM-dd");
+  // const dt = DateTime.fromISO(props.date.toISOString());
+  // const dateTime = dt.toFormat("yyyy-MM-dd");
 
   // console.log("date", props.date);
   // console.log("format date-fns", dateTime);
